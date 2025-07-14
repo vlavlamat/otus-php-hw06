@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:17.5-alpine
+    container_name: postgres-hw06
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./ddl:/docker-entrypoint-initdb.d
+    networks:
+      - otus-hw06
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-hw06
+    restart: unless-stopped
+    depends_on:
+      - db
+    networks:
+      - otus-hw06
+
+networks:
+  otus-hw06:
+    driver: bridge
+
+volumes:
+  db_data:

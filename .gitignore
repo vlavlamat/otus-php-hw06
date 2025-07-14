@@ -1,0 +1,30 @@
+# Docker артефакты
+db_data/
+*.pid
+*.sock
+
+# IDE/редакторы
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Логи и дампы
+logs/
+*.log
+*.sql~
+dump*.sql
+
+# Временные файлы
+*.tmp
+*.temp
+*~
+*.bak
+
+# OS файлы
+.DS_Store
+desktop.ini
+Thumbs.db
+
+# Environment файлы
+.env*
