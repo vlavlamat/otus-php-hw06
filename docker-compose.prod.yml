@@ -1,0 +1,10 @@
+services:
+  db:
+    env_file:
+      - env/.env.prod
+
+  pgadmin:
+    env_file:
+      - env/.env.prod
+    ports:
+      - "8003:80"

@@ -1,5 +1,53 @@
+# Игнорируем артефакты Docker
+db_data/
+*.pid
+*.sock
+
+# Игнорируем файлы и папки IDE/редактора
 .idea/
-/vendor/
+.vscode/
+*.swp
+*.swo
+
+# Игнорируем логи и дампы
+logs/
+*.log
+*.sql~         # резервные копии
+dump*.sql
+
+# Игнорируем временные/кэш-файлы
+*.tmp
+*.temp
+*~
+Thumbs.db
+
+# Игнорируем node_modules (если вдруг будет фронтенд)
+node_modules/
+npm-debug.log*
+
+# Исключаем чувствительные файлы с паролями (если появятся)
+.env.dev
+.env.prod
+!env.prod.example
+!env.env.example
+
+# Игнорируем файлы OS
 .DS_Store
-.AppleDouble
-.LSOverride
+desktop.ini
+
+# Игнорируем Makefile-generated (если используешь отдельные временные скрипты)
+*.bak
+
+# Не игнорировать файлы проекта:
+!/ddl/
+!/doc/
+!/queries/
+!docker-compose.yml
+!docker-compose.dev.yml
+!docker-compose.prod.yml
+!Makefile
+
+# Если будет ER-диаграмма в картинках — картинки не игнорируем
+!/doc/*.png
+!/doc/*.jpg
+!/doc/*.svg
