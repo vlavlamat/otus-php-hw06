@@ -6,20 +6,20 @@
 # ────────────────────────────────
 
 prod-up:
-	docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+	docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
 prod-down:
-	docker-compose -f docker-compose.yml -f docker-compose.prod.yml down
+	docker compose -f docker-compose.yml -f docker-compose.prod.yml down
 
 prod-logs:
-	docker-compose -f docker-compose.yml -f docker-compose.prod.yml logs -f
+	docker compose -f docker-compose.yml -f docker-compose.prod.yml logs -f
 
 prod-ps:
-	docker-compose -f docker-compose.yml -f docker-compose.prod.yml ps
+	docker compose -f docker-compose.yml -f docker-compose.prod.yml ps
 
 # Остановка и удаление volume в продакшене (ОСТОРОЖНО: удаляются все данные!)
 prod-clean:
-	docker-compose -f docker-compose.yml -f docker-compose.prod.yml down -v
+	docker compose -f docker-compose.yml -f docker-compose.prod.yml down -v
 
 # Пересоздание прод-окружения с нуля (чистая база, актуальная схема)
 prod-update: prod-clean prod-up
